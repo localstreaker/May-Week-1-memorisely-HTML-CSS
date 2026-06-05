@@ -6,17 +6,18 @@
 
 :root {
     color-scheme: dark;
-    --bg-page: #0f0f0f;
-    --bg-card: #1a1a1a;
-    --text-primary: #f0f0f0;
-    --text-secondary: #a3a3a3;
-    --text-muted: #8a8a8a;
-    --btn-bg: #2a2a2a;
-    --btn-bg-hover: #3a3a3a;
+    --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --bg-page: rgba(15, 15, 15, 1);
+    --bg-card: rgba(27, 25, 19, 1);
+    --text-primary: rgba(237, 237, 236, 1);
+    --text-secondary: rgba(163, 163, 163, 1);
+    --text-muted: rgba(138, 138, 138, 1);
+    --btn-bg: rgba(42, 42, 42, 1);
+    --btn-bg-hover: rgba(58, 58, 58, 1);
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    font-family: var(--font-family);
     background-color: var(--bg-page);
     color: var(--text-primary);
     display: flex;
@@ -36,59 +37,88 @@ body {
 }
 
 .card {
+    display: flex;
+    flex-direction: column;
+    min-height: 380px;
     background-color: var(--bg-card);
     border-radius: 12px;
-    padding: 12px;
+    padding: 16px;
     width: 320px;
     flex-shrink: 0;
     font-size: 16px;
 }
 
+.card-top {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
 .card-title {
-    font-size: 20px;
+    font-size: 22px;
+    line-height: 28px;
     font-weight: 400;
     color: var(--text-primary);
-    margin-bottom: 8px;
+    margin-bottom: 2px;
 }
 
 .card-price {
-    font-size: 16px;
+    font-size: 22px;
+    line-height: 28px;
     color: var(--text-secondary);
-    margin-bottom: 16px;
+    display: flex;
+    align-items: baseline;
+}
+
+.card-price-amount {
+    font-size: 22px;
+    line-height: 28px;
+    font-weight: 200;
+    color: var(--text-secondary);
+}
+
+.card-price-period {
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--text-secondary);
 }
 
 .card-content {
-    margin-bottom: 16px;
+    margin-bottom: 0;
 }
 
 .includes-text {
     font-size: 16px;
-    color: var(--text-primary);
-    margin-bottom: 16px;
+    color: var(--text-secondary);
+    margin: 16px 0;
+    text-align: left;
 }
 
 .features-list {
     list-style: none;
     padding: 0;
+    margin: 0;
 }
 
 .features-list li {
     display: flex;
-    align-items: center;
-    margin-bottom: 12px;
+    align-items: flex-start;
+    margin-bottom: 8px;
+    padding-left: 0;
     font-size: 16px;
     color: var(--text-primary);
 }
 
 .checkmark {
-    color: var(--text-muted);
-    font-size: 16px;
-    margin-right: 12px;
-    font-weight: bold;
+    color: var(--text-primary);
+    font-size: 14px;
+    margin-right: 10px;
+    font-weight: regular;
 }
 
 .download-button {
     width: fit-content;
+    margin-top: auto;
     background-color: var(--btn-bg);
     border: none;
     border-radius: 999px;
